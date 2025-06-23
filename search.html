@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Redirect Uikli</title>
+  <script>
+    // Prendi i parametri dalla query string
+    const params = new URLSearchParams(window.location.search);
+    const username = params.get('username');
+    if (username) {
+      window.location.href = `uikli://search?username=${username}`;
+    } else {
+      document.body.innerHTML = 'Parametro mancante';
+    }
+  </script>
+</head>
+<body>
+  <p>Se non succede nulla, <a id="link" href="#">clicca qui</a>.</p>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const username = params.get('username');
+    if (username) {
+      document.getElementById('link').href = `uikli://search?username=${username}`;
+    }
+  </script>
+</body>
+</html>
