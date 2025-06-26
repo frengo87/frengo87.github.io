@@ -4,23 +4,45 @@
   <meta charset="UTF-8">
   <title>Profilo Uikli</title>
   <meta property="og:title" content="Profilo Uikli">
-
   <meta name="description" content="Scopri il profilo di questo utente su Uikli. Tocca per aprire il suo profilo direttamente nell'app e vedere la sua wishlist." />
   <meta property="og:image" content="https://www.uikli.it/logo.png" />
   <meta property="og:type" content="website" />
+
   <script>
-    // Prendi i parametri dalla query string
     const params = new URLSearchParams(window.location.search);
     const username = params.get('username');
+
     if (username) {
-      window.location.href = `uikli://search?username=${username}`;
+      const now = Date.now();
+      const deepLink = `uikli://search?username=${username}`;
+
+      // Prova ad aprire l'app
+      window.location.href = deepLink;
+
+      // Dopo 1 secondo, se non è stata aperta l'app, reindirizza allo store corretto
+      setTimeout(() => {
+        if (Date.now() - now < 2000) {
+          const ua = navigator.userAgent || navigator.vendor || window.opera;
+
+          if (/android/i.test(ua)) {
+            window.location.href = "https://play.google.com/store/apps/details?id=com.francescoconcordia.uikli";
+          } else if (/iPad|iPhone|iPod/.test(ua) && !window.MSStream) {
+            window.location.href = "https://apps.apple.com/app/idXXXXXXXXXX"; // Sostituisci con il tuo vero App Store ID
+          } else {
+            window.location.href = "https://www.uikli.it/scarica"; // Fallback generico
+          }
+        }
+      }, 1000);
     } else {
-      document.body.innerHTML = 'Parametro mancante';
+      document.addEventListener('DOMContentLoaded', () => {
+        document.body.innerHTML = 'Parametro mancante';
+      });
     }
   </script>
 </head>
 <body>
-  <p>Se non succede nulla, <a id="link" href="#">clicca qui</a>.</p>
+  <p>Se non succede nulla, <a id="link" href="#">clicca qui per aprire il profilo nell'app</a>.</p>
+
   <script>
     const params = new URLSearchParams(window.location.search);
     const username = params.get('username');
