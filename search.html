@@ -18,9 +18,8 @@
 
       // Prova ad aprire l'app
       window.location.href = deepLink;
-    alert(deepLink);
       // Dopo 1 secondo, se non è stata aperta l'app, reindirizza allo store corretto
-      setTimeout(() => {
+     /* setTimeout(() => {
         if (Date.now() - now < 2000) {
           const ua = navigator.userAgent || navigator.vendor || window.opera;
 
@@ -32,7 +31,7 @@
             window.location.href = "https://www.uikli.it/scarica"; // Fallback generico
           }
         }
-      }, 1000);
+      }, 1000);*/
     } else {
       document.addEventListener('DOMContentLoaded', () => {
         document.body.innerHTML = 'Parametro mancante';
