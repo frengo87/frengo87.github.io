@@ -18,7 +18,7 @@
 
       // Prova ad aprire l'app
       window.location.href = deepLink;
-
+    alert(deepLink);
       // Dopo 1 secondo, se non è stata aperta l'app, reindirizza allo store corretto
       setTimeout(() => {
         if (Date.now() - now < 2000) {
