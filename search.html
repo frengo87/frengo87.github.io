@@ -25,10 +25,9 @@
 
           if (/android/i.test(ua)) {
             window.location.href = "https://play.google.com/store/apps/details?id=com.francescoconcordia.uikli";
-          } else if (/iPad|iPhone|iPod/.test(ua) && !window.MSStream) {
-            window.location.href = "https://apps.apple.com/app/idXXXXXXXXXX"; // Sostituisci con il tuo vero App Store ID
+          
           } else {
-            window.location.href = "https://www.uikli.it/scarica"; // Fallback generico
+            window.location.href = "https://www.uikli.it"; // Fallback generico
           }
         }
       }, 1000);
