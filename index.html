@@ -1,92 +1,115 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Uikli – Wishlist intelligente</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f9f9f9;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-    }
-    .container {
-      max-width: 500px;
-      text-align: center;
-      padding: 2rem;
-      background: white;
-      border-radius: 16px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-    h1 {
-      font-size: 2rem;
-      color: #222;
-    }
-    p {
-      font-size: 1rem;
-      color: #555;
-      margin-bottom: 1.5rem;
-      line-height: 1.6;
-    }
-    .btn {
-      display: block;
-      margin: 0.5rem auto;
-      padding: 0.75rem 1.5rem;
-      border-radius: 8px;
-      text-decoration: none;
-      color: white;
-      font-weight: bold;
-    }
-    .btn-android {
-      background-color: #3ddc84;
-    }
-    .btn-ios {
-      background-color: #0070f3;
-    }
-    .logo {
-      width: 280px;
-      margin-bottom: 1rem;
-    }
-    .store-img {
-      width: 100%;
-      height: auto;
-      display: block;
-      margin-bottom: 1rem;
-    }
-    .hero {
-      width: 100%;
-      border-radius: 12px;
-      margin-bottom: 1.5rem;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Uikli - La tua wishlist universale</title>
+  <meta name="description" content="Uikli è l'app gratuita che ti permette di creare wishlist universali e condivisibili con chi vuoi. Aggiungi prodotti da qualsiasi sito o marketplace in un click.">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="icon" href="https://uikli.app/favicon.ico" type="image/x-icon">
 </head>
-<body>
-  <div class="container">
-    <img src="logo.png" alt="Uikli Logo" class="logo" />
-    <h1>La wishlist universale, semplice e intelligente</h1>
-    <img src="Screenshot_20250618_123216_Uikli stipcatrov.jpg" alt="Anteprima app Uikli" class="hero" />
-    <p>
-      Quante volte amici e parenti ti hanno chiesto: <strong>"Cosa vuoi per il compleanno?"</strong>  
-      E quante volte hai ricevuto qualcosa che avevi già… o che proprio non ti serviva?
+
+<body class="bg-white text-gray-800 flex flex-col min-h-screen">
+
+  <!-- HEADER -->
+  <header class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-6">
+    <div class="container mx-auto px-6 flex justify-between items-center">
+      <h1 class="text-2xl font-bold">Uikli</h1>
+      <nav class="space-x-6 hidden md:block">
+        <a href="#cos-e" class="hover:text-gray-200">Cos'è</a>
+        <a href="#a-cosa-serve" class="hover:text-gray-200">A cosa serve</a>
+        <a href="#a-chi-e-rivolta" class="hover:text-gray-200">A chi è rivolta</a>
+        <a href="#download" class="hover:text-gray-200">Download</a>
+        <a href="#contatti" class="hover:text-gray-200">Contatti</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="bg-gray-50 py-20 text-center px-6">
+    <h2 class="text-4xl md:text-5xl font-bold mb-4">La tua wishlist universale</h2>
+    <p class="text-lg md:text-xl text-gray-600 mb-8">
+      Aggiungi, condividi e gestisci i tuoi desideri da <strong>qualsiasi e-commerce</strong> in un solo posto.
     </p>
-    <p>
-      Con <strong>Uikli</strong> puoi creare una wishlist salvando prodotti da <u>qualsiasi sito o app</u>,  
-      e condividerla in un click con chi vuoi. Così chi ti fa un regalo sa esattamente cosa desideri – evitando regali sgraditi o doppioni.
-    </p>
-    <p>
-      Funziona anche al contrario: vuoi fare un regalo a qualcuno? Se ha una wishlist Uikli, sei al sicuro.
-    </p>
-    <a href="https://play.google.com/store/apps/details?id=com.francescoconcordia.uikli">
-      <img class="store-img" src="play_store.png" alt="Scarica da Google Play" />
-    </a>
-    <!-- <a href="https://apps.apple.com/app/tuo-link-ios">
-      <img class="store-img" src="app_store.png" alt="Scarica da App Store" />
-    </a> -->
-  </div>
+    <div class="flex justify-center gap-4 flex-wrap">
+      <a href="#download" class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-lg text-lg font-medium transition">Scarica l'app</a>
+      <a href="#cos-e" class="border border-indigo-600 text-indigo-600 hover:bg-indigo-50 px-6 py-3 rounded-lg text-lg font-medium transition">Scopri di più</a>
+    </div>
+  </section>
+
+  <!-- COS'È -->
+  <section id="cos-e" class="py-16 bg-white px-6">
+    <div class="container mx-auto max-w-4xl text-center">
+      <h3 class="text-3xl font-bold mb-6">Cos'è Uikli</h3>
+      <p class="text-gray-600 text-lg leading-relaxed">
+        <strong>Uikli</strong> è un'app gratuita che ti permette di creare wishlist personali e condivisibili.  
+        Puoi aggiungere prodotti da <strong>qualsiasi sito o marketplace</strong> semplicemente condividendo il link.  
+        È il modo più semplice per tenere traccia di ciò che desideri — o per farti regalare quello che vuoi davvero.
+      </p>
+    </div>
+  </section>
+
+  <!-- A COSA SERVE -->
+  <section id="a-cosa-serve" class="py-16 bg-gray-50 px-6">
+    <div class="container mx-auto max-w-5xl text-center">
+      <h3 class="text-3xl font-bold mb-6">A cosa serve</h3>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="p-6 bg-white rounded-xl shadow-sm">
+          <h4 class="font-semibold text-xl mb-3">Salva tutto in un posto</h4>
+          <p class="text-gray-600">Aggiungi prodotti da Amazon, Zalando, IKEA, o qualunque altro sito. Basta condividere il link verso Uikli.</p>
+        </div>
+        <div class="p-6 bg-white rounded-xl shadow-sm">
+          <h4 class="font-semibold text-xl mb-3">Condividi la tua wishlist</h4>
+          <p class="text-gray-600">Crea wishlist per compleanni, Natale o eventi, e condividile con amici e familiari.</p>
+        </div>
+        <div class="p-6 bg-white rounded-xl shadow-sm">
+          <h4 class="font-semibold text-xl mb-3">Evita doppioni</h4>
+          <p class="text-gray-600">Chi riceve il link può segnare cosa ha acquistato, così nessuno compra lo stesso regalo due volte.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- A CHI È RIVOLTA -->
+  <section id="a-chi-e-rivolta" class="py-16 bg-white px-6">
+    <div class="container mx-auto max-w-4xl text-center">
+      <h3 class="text-3xl font-bold mb-6">A chi è rivolta</h3>
+      <p class="text-gray-600 text-lg leading-relaxed">
+        A chiunque ami organizzarsi, ricevere (o fare) regali con gusto e senza sprechi.  
+        Uikli è pensata per <strong>tutti</strong>: amici, coppie, famiglie, team aziendali o semplicemente per chi non vuole dimenticare le proprie idee d’acquisto.
+      </p>
+    </div>
+  </section>
+
+  <!-- DOWNLOAD -->
+  <section id="download" class="py-20 bg-gray-50 text-center px-6">
+    <h3 class="text-3xl font-bold mb-8">Scarica Uikli gratuitamente</h3>
+    <p class="text-gray-600 text-lg mb-10">Disponibile su Android e iOS, sempre gratis.</p>
+    <div class="flex justify-center flex-wrap gap-6">
+      <a href="https://play.google.com/store/apps/details?id=com.uikli.app" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_IT.svg" alt="Disponibile su Google Play" class="h-14">
+      </a>
+      <a href="https://apps.apple.com/app/uikli/idXXXXXXXXX" target="_blank">
+        <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Scarica su App Store" class="h-14">
+      </a>
+    </div>
+  </section>
+
+  <!-- CONTATTI -->
+  <section id="contatti" class="py-16 bg-white px-6">
+    <div class="container mx-auto max-w-4xl text-center">
+      <h3 class="text-3xl font-bold mb-6">Contatti</h3>
+      <p class="text-gray-600 text-lg mb-4">
+        Hai domande, suggerimenti o vuoi collaborare con noi?
+      </p>
+      <a href="mailto:info@uikli.app" class="text-indigo-600 font-semibold hover:underline text-lg">info@uikli.app</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-900 text-gray-400 text-center py-6 mt-auto">
+    <p>&copy; 2025 Uikli. Tutti i diritti riservati.</p>
+  </footer>
+
 </body>
 </html>
